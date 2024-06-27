@@ -2,10 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "dev":"nodemon app.js",
-    "build":"npm i"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amit Yadav",
   "type": "module",
