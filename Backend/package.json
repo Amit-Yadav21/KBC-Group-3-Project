@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev":"nodemon app.js",
+    "build":"npm i"
   },
   "author": "Amit Yadav",
   "type": "module",
@@ -20,9 +21,7 @@
     "joi": "^17.13.1",
     "jsonwebtoken": "^9.0.2",
     "moment-timezone": "^0.5.45",
-    "mongoose": "^8.4.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "mongoose": "^8.4.1",
+    "nodemon": "^3.1.3"
   }
 }
