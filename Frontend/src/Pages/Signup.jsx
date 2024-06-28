@@ -68,7 +68,7 @@ const Signup = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post("http://localhost:3000/post", {
+        const response = await axios.post("https://kbc-backend-code.onrender.com/post", {
           name: formData.name,
           email: formData.email,
           password: formData.password,

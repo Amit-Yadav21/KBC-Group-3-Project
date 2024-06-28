@@ -12,7 +12,7 @@ function FindSignupData() {
     useEffect(() => {
         const fetchFindSignupData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/Get/signup/All/user');
+                const response = await axios.get('https://kbc-backend-code.onrender.com/Get/signup/All/user');
                 setFindSignupData(response.data);
                 setLoading(false); // Set loading to false once data is fetched
             } catch (error) {
@@ -27,7 +27,7 @@ function FindSignupData() {
 
     const handleDeleteUser = async (emailId) => {
         try {
-            const response = await axios.delete('http://localhost:3000/delete/login/user/by/email', {
+            const response = await axios.delete('https://kbc-backend-code.onrender.com/delete/login/user/by/email', {
                 data: { id: emailId } // Ensure 'id' matches what backend expects
             });
 

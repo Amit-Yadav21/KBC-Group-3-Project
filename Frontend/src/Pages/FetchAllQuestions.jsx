@@ -13,7 +13,7 @@ function FetchAllQuestions() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/Get/All/Questions');
+        const response = await axios.get('https://kbc-backend-code.onrender.com/Get/All/Questions');
         setQuestions(response.data);
         setLoading(false); // Set loading to false once data is fetched
       } catch (error) {
@@ -28,7 +28,7 @@ function FetchAllQuestions() {
 
   const handleDeleteQuestion = async (questionId) => {
     try {
-      const response = await axios.delete('http://localhost:3000/Delete/Question', {
+      const response = await axios.delete('https://kbc-backend-code.onrender.com/Delete/Question', {
         data: { id: questionId }
       });
 
