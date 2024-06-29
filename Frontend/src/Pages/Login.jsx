@@ -91,10 +91,20 @@ const Login = ({ setUserRole }) => {
   };
 
   return (
-    <div className="flex justify-center items-center p-6 bg-slate-300 min-h-screen">
+    <div className="flex justify-center items-center p-6 min-h-screen"
+      style={{
+        backgroundImage: "url('https://wallpaperset.com/w/full/5/5/9/521100.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}
+    >
       <ToastContainer />
-      <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg bg-white">
-        <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
+      <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg" style={{
+        backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}>
+        <h1 className="text-3xl font-bold text-center mb-6 text-white">
           Login
         </h1>
         <form onSubmit={handleLogin}>
@@ -105,10 +115,10 @@ const Login = ({ setUserRole }) => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border rounded-lg bg-transparent text-white"
             />
             {errors.email && (
-              <div className="text-red-500 text-sm mt-1">{errors.email}</div>
+              <div className="text-white text-xl mt-1">{errors.email}</div>
             )}
           </div>
           <div className="mb-4 relative">
@@ -118,32 +128,33 @@ const Login = ({ setUserRole }) => {
               value={formData.password}
               onChange={handleInputChange}
               placeholder="Password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border rounded-lg bg-transparent text-white"
             />
             <span
               onClick={toggleShowPassword}
-              className="absolute right-3 top-3 cursor-pointer"
+              className="absolute right-3 cursor-pointer text-white bg-yellow-500 p-2 rounded-s-full"
             >
               {showPassword ? "Hide" : "Show"}
             </span>
             {errors.password && (
-              <div className="text-red-500 text-sm mt-1">{errors.password}</div>
+              <div className="text-white text-xl mt-1">{errors.password}</div>
             )}
+
           </div>
           {errorMessage && (
-            <div className="mb-4 text-red-500 text-center">{errorMessage}</div>
+            <div className="mb-4 text-white text-xl text-center">{errorMessage}</div>
           )}
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white py-2 rounded-lg cursor-pointer hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-400 transition duration-300"
+            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 transition duration-300"
           >
             Login
           </button>
-          <p className="mt-4 text-center">
+          <p className="mt-1 text-1xl text-center text-white">
             Create an account{" "}
             <Link
               to="/signup"
-              className="text-blue-700 underline font-semibold"
+              className="text-white text-xl underline font-semibold"
             >
               Signup
             </Link>

@@ -63,7 +63,11 @@ const AddQuestionForm = () => {
   };
 
   return (
-    <div className="bg-slate-300 p-10">
+    <div className="bg-slate-300 p-10" style={{
+      backgroundImage: "url('https://wallpaperset.com/w/full/5/5/9/521100.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center"
+    }}>
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-4 text-gray-800 flex items-center">
           <FaQuestionCircle className="mr-2 text-blue-500" />

@@ -67,7 +67,7 @@ const AdminDashboard = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row items-center md:items-start">
-          <div className="md:w-1/2 p-1">
+          <div className="md:w-1/2 p-2">
             <h2 className="text-3xl font-semibold text-gray-800 mb-2 flex items-center">
               <GiSoundOn className="mr-2 text-blue-500" /> Sounds 
             </h2>
