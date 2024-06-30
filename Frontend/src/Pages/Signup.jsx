@@ -102,7 +102,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-6 bg-slate-300 min-h-screen" style={{
+    <div className="flex justify-center items-center p-6 min-h-screen" style={{
       backgroundImage: "url('https://wallpaperset.com/w/full/5/5/9/521100.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center"
@@ -110,7 +110,7 @@ const Signup = () => {
       <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg" style={{
         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
         backgroundSize: "cover",
-        backgroundPosition: "center"
+        backgroundPosition: "center",
       }}>
         <h1 className="text-4xl font-bold text-center mb-6 text-white">
           Signup
