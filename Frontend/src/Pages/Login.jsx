@@ -101,8 +101,8 @@ const Login = ({ setUserRole }) => {
       <ToastContainer />
       <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg" style={{
         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
+        backgroundSize:"cover",
+        // backgroundPosition: "center"
       }}>
         <h1 className="text-3xl font-bold text-center mb-6 text-white">
           Login

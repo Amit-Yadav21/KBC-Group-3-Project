@@ -79,19 +79,19 @@ function FetchAllQuestions() {
             backgroundSize: "cover",
             backgroundPosition: "center"
           }}>
-            <h2 className="text-lg font-semibold mb-2 text-white hover:bg-gray-500 rounded-e-full">{question.question}</h2>
-            <ul className="space-y-2 text-white hover:bg-gray-500 rounded-e-full">
+            <h2 className="text-lg font-semibold mb-2 text-white hover:bg-gray-700 rounded-e-full">{question.question}</h2>
+            <ul className="space-y-2 text-white hover:bg-gray-700 rounded-e-full">
               {question.options.map((option, index) => (
                 <li key={index}>{index} : {option}</li>
               ))}
             </ul>
-            <div className="flex items-center justify-between text-white hover:bg-gray-500 rounded-e-full">
+            <div className="flex items-center justify-between text-white hover:bg-gray-700 rounded-e-full">
               <p className="mt-2">Correct Answer (Index Wise): {question.correct}</p>
             </div>
-            <div className="flex items-center justify-between text-white hover:bg-gray-500 rounded-e-full">
+            <div className="flex items-center justify-between text-white hover:bg-gray-700 rounded-e-full">
               <p className="mt-2 text-sm">Category: {question.category}</p>
               <FaTrash
-                className="ml-4 text-red-500 text-2xl cursor-pointer"
+                className="ml-4 text-red-700 text-2xl cursor-pointer"
                 onClick={() => handleDeleteQuestion(question._id)}
               />
             </div>

@@ -55,27 +55,27 @@ function FindSignupData() {
                         backgroundSize: "cover",
                         backgroundPosition: "center"
                       }}>
-                        <h2 className="text-lg font-semibold mb-2 text-white hover:bg-gray-400 rounded-e-full">{userData.name}</h2>
+                        <h2 className="text-lg font-semibold mb-2 text-white hover:bg-gray-700 rounded-e-full">{userData.name}</h2>
                         <div className="flex items-center justify-between">
-                            <p className="mt-2 text-white hover:bg-gray-400 rounded-e-full"> Email : {userData.email}</p>
+                            <p className="mt-2 text-white hover:bg-gray-700 rounded-e-full"> Email : {userData.email}</p>
                         </div>
-                        <div className="max-w-full text-white hover:bg-gray-400 rounded-e-full">
+                        <div className="max-w-full text-white hover:bg-gray-700 rounded-e-full">
                             <div className="flex items-center justify-between">
                                 <p className="mt-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
                                     Password: {userData.password}
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-gray-400 rounded-e-full">
+                        <div className="flex items-center justify-between text-white hover:bg-gray-700 rounded-e-full">
                             <p className="mt-2"> Mobile Number : {userData.mobile_number}</p>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-gray-400 rounded-e-full">
+                        <div className="flex items-center justify-between text-white hover:bg-gray-700 rounded-e-full">
                             <p className="mt-2"> Admin Token : {userData.adminToken}</p>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-gray-400 rounded-e-full">
+                        <div className="flex items-center justify-between text-white hover:bg-gray-700 rounded-e-full">
                             <p className="mt-2"> Role : {userData.role}</p>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-gray-400 rounded-e-full">
+                        <div className="flex items-center justify-between text-white hover:bg-gray-700 rounded-e-full">
                             <p className="mt-2 text-sm">createdAt : {userData.createdAt}</p>
                             <FaTrash
                                 className="ml-4 text-red-500 text-2xl cursor-pointer"
