@@ -154,7 +154,7 @@ const Signup = () => {
             />
             <span
               onClick={toggleShowPassword}
-              className="absolute right-3 cursor-pointer text-white bg-yellow-500 p-2 rounded-s-full"
+              className="absolute right-3 cursor-pointer text-white bg-gray-500 p-2 rounded-s-full"
             >
               {showPassword ? "Hide" : "Show"}
             </span>
@@ -228,7 +228,7 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-400 transition duration-300"
+            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 focus:ring-white transition duration-300"
           >
             Signup
           </button>

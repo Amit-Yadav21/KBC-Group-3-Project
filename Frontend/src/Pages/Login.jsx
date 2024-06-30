@@ -70,7 +70,6 @@ const Login = ({ setUserRole }) => {
           }
         } else {
           console.error("Login failed");
-          toast.error("Login failed. Please try again.");
           setErrorMessage("Login failed. Please try again.");
         }
 
@@ -80,8 +79,7 @@ const Login = ({ setUserRole }) => {
         });
       } catch (error) {
         console.error("Login error:", error);
-        toast.error("Login failed. Please try again.");
-        setErrorMessage("Login failed. Please try again.");
+        toast.error("Check Email and Passqord...?");
       }
     }
   };
@@ -132,7 +130,7 @@ const Login = ({ setUserRole }) => {
             />
             <span
               onClick={toggleShowPassword}
-              className="absolute right-3 cursor-pointer text-white bg-yellow-500 p-2 rounded-s-full"
+              className="absolute right-3 cursor-pointer text-white bg-gray-500 p-2 rounded-s-full"
             >
               {showPassword ? "Hide" : "Show"}
             </span>
@@ -146,7 +144,7 @@ const Login = ({ setUserRole }) => {
           )}
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 transition duration-300"
+            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 focus:ring-white transition duration-300"
           >
             Login
           </button>
