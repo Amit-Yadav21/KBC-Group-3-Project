@@ -68,6 +68,17 @@ const Signup = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
+        // Check if email already exists
+        const emailCheckResponse = await axios.post("https://kbc-backend-code.onrender.com/check/email", {
+          email: formData.email,
+        });
+
+        if (emailCheckResponse.data.exists) {
+          toast.error("Email already exists. Please login.");
+          return;
+        }
+
+        // Proceed with signup if email does not exist
         const response = await axios.post("https://kbc-backend-code.onrender.com/post", {
           name: formData.name,
           email: formData.email,
