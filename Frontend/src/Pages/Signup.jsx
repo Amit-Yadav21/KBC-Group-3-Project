@@ -197,7 +197,7 @@ const Signup = () => {
           {formData.role === 'admin' && (
             <div className="mb-2">
               <input
-                type="text"
+                type={showPassword ? "text" : "password"}
                 name="adminToken"
                 value={formData.adminToken}
                 onChange={handleInputChange}
