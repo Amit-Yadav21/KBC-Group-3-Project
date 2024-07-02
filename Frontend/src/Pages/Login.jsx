@@ -39,6 +39,8 @@ const Login = ({ setUserRole }) => {
       errors.password = "Password is required";
     }
     setErrors(errors);
+    setErrorMessage(Object.values(errors).join(". "));
+    return Object.keys(errors).length === 0;
   };
 
   const handleInputChange = (e) => {
