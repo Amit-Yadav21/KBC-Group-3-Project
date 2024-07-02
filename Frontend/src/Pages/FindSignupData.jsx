@@ -47,7 +47,7 @@ function FindSignupData() {
     return (
         <div className="container mx-auto p-4">
             <ToastContainer />
-            <h1 className="text-3xl font-bold text-center mt-5">All Signup User & Admin Data</h1>
+            <h1 className="text-3xl font-bold text-center">All Signup User & Admin Data</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                 {findSignupData.map((userData) => (
                     <div key={userData._id} className="p-4 border rounded shadow" style={{
@@ -55,7 +55,7 @@ function FindSignupData() {
                         backgroundSize: "cover",
                         // backgroundPosition: "center"
                     }}>
-                        <h2 className="text-lg font-semibold mb-2 text-white hover:bg-black rounded-e-full">Name : {userData.name}</h2>
+                        <h2 className="text-lg font-semibold text-white hover:bg-black rounded-e-full">Name : {userData.name}</h2>
                         <div className="flex items-center justify-between">
                             <p className="mt-2 text-white hover:bg-black rounded-e-full text-xl"> Email : {userData.email}</p>
                         </div>
