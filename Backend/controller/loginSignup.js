@@ -20,13 +20,15 @@ const signup = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
+        const hashedadminToken = await bcrypt.hash(adminToken, salt);
+
         const newUser = new Register({
             name,
             email,
             password: hashedPassword,
             mobile_number,
             role,
-            adminToken,
+            adminToken: hashedadminToken,
         });
 
         const result = await newUser.save();
@@ -59,6 +61,20 @@ const login = async (req, res) => {
     } catch (error) {
         console.error(error.message);
         res.status(500).send('Server Error');
+    }
+};
+
+const checkEmailExists = async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await Register.findOne({ email });
+        if (user) {
+            return res.status(200).json({ exists: true });
+        }
+        return res.status(200).json({ exists: false });
+    } catch (error) {
+        console.error('Error checking email:', error);
+        res.status(500).json({ message: 'Server Error' });
     }
 };
 
@@ -142,4 +158,4 @@ const logout = (req, res) => {
     }
 };
 
-export { signup, login, getAllUsers, GetLoginData, DeleteUserData, UpdateLoginData, logout };
+export { signup, login, checkEmailExists, getAllUsers, GetLoginData, DeleteUserData, UpdateLoginData, logout };

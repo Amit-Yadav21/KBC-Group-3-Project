@@ -17,6 +17,7 @@ router.get('/find/Login/user', verifyToken, loginSignup.GetLoginData);
 router.put('/update/login/user/by/email', verifyToken, loginSignup.UpdateLoginData);
 router.delete('/delete/login/user/by/email', loginSignup.DeleteUserData);
 router.post('/logout/Login/data', verifyToken, loginSignup.logout);
+router.post('/check-email', loginSignup.checkEmailExists);
 
 // Question  router
 router.post('/Create/Questions', question.PutQuestion);
