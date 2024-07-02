@@ -77,22 +77,23 @@ function FetchAllQuestions() {
           <div key={question._id} className="p-4 border rounded shadow" style={{
             backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            // backgroundPosition: "center"
           }}>
-            <h2 className="text-lg font-semibold mb-2 text-white hover:bg-black rounded-e-full">{question.question}</h2>
-            <ul className="space-y-2 text-white hover:bg-black rounded-e-full">
+            <h1 className="text-xl font-semibold mb-2 text-white hover:bg-black rounded-e-full">{question.question}</h1>
+            <ul className="space-y-2 text-white hover:bg-black rounded-e-full text-xl">
               {question.options.map((option, index) => (
                 <li key={index}>{index} : {option}</li>
               ))}
             </ul>
             <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-              <p className="mt-2">Correct Answer (Index Wise): {question.correct}</p>
+              <p className="mt-2 text-xl">Correct Answer (Index Wise): {question.correct}</p>
             </div>
             <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-              <p className="mt-2 text-sm">Category: {question.category}</p>
+              <p className="mt-2 text-xl">Category: {question.category}</p>
               <FaTrash
-                className="ml-4 text-red-700 text-2xl cursor-pointer"
+                className="ml-4 text-red-700 text-3xl cursor-pointer"
                 onClick={() => handleDeleteQuestion(question._id)}
+                title="Delete this question...!"
               />
             </div>
           </div>
