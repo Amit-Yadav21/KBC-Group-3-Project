@@ -54,7 +54,7 @@ function FindSignupData() {
                         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
                         backgroundSize: "cover",
                         backgroundPosition: "center"
-                      }}>
+                    }}>
                         <h2 className="text-lg font-semibold mb-2 text-white hover:bg-black rounded-e-full">Name : {userData.name}</h2>
                         <div className="flex items-center justify-between">
                             <p className="mt-2 text-white hover:bg-black rounded-e-full"> Email : {userData.email}</p>
@@ -70,7 +70,9 @@ function FindSignupData() {
                             <p className="mt-2"> Mobile Number : {userData.mobile_number}</p>
                         </div>
                         <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-                            <p className="mt-2"> Admin Token : {userData.adminToken}</p>
+                            <p className="mt-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                                Admin Token : {userData.adminToken}
+                            </p>
                         </div>
                         <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
                             <p className="mt-2"> Role : {userData.role}</p>
