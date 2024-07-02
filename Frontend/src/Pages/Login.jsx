@@ -130,7 +130,7 @@ const Login = ({ setUserRole }) => {
             />
             <span
               onClick={toggleShowPassword}
-              className="absolute right-3 cursor-pointer text-white bg-gray-500 p-2 rounded-s-full"
+              className="absolute right-3 cursor-pointer text-white bg-gray-500 hover:bg-white hover:text-black p-2 rounded-s-full"
             >
               {showPassword ? "Hide" : "Show"}
             </span>
