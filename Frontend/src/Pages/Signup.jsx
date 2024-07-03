@@ -103,7 +103,7 @@ const Signup = () => {
         });
       } catch (error) {
         console.error("Signup Error:", error);
-        toast.error("Signup failed. Please try again.");
+        toast.error("Signup failed. Internal Server Error...");
       }
     }
   };
@@ -134,7 +134,6 @@ const Signup = () => {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="Full Name"
-              autoComplete="off"
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 bg-transparent text-white"
             />
             {errors.name && (
