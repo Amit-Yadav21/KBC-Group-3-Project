@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../style.css'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -118,16 +119,17 @@ const Signup = () => {
       backgroundSize: "cover",
       backgroundPosition: "center"
     }}>
-      <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg" style={{
+      <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg blur-bg-image" style={{
         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
         backgroundSize: "cover",
         // backgroundPosition: "center",
+        position: "relative"
       }}>
-        <h1 className="text-4xl font-bold text-center mb-6 text-white">
+        <h1 className="text-4xl font-bold text-center mb-6 text-white relative">
           Signup
         </h1>
         <form onSubmit={handleSignup}>
-          <div className="mb-2">
+          <div className="mb-2 relative">
             <input
               type="text"
               name="name"
@@ -140,7 +142,7 @@ const Signup = () => {
               <div className="text-white text-xl mt-1">{errors.name}</div>
             )}
           </div>
-          <div className="mb-2">
+          <div className="mb-2 relative">
             <input
               type="email"
               name="email"
@@ -172,7 +174,7 @@ const Signup = () => {
               <div className="text-white text-xl mt-1">{errors.password}</div>
             )}
           </div>
-          <div className="mb-2">
+          <div className="mb-2 relative">
             <input
               type="tel"
               name="mobile_number"
@@ -187,7 +189,7 @@ const Signup = () => {
               </div>
             )}
           </div>
-          <div className="mb-2">
+          <div className="mb-2 relative">
             <label className="block text-white text-xl font-bold mb-2">
               Role
             </label>
@@ -205,7 +207,7 @@ const Signup = () => {
             )}
           </div>
           {formData.role === 'admin' && (
-            <div className="mb-2">
+            <div className="mb-2 relative">
               <input
                 type={showPassword ? "text" : "password"}
                 name="adminToken"
@@ -220,7 +222,7 @@ const Signup = () => {
               )}
             </div>
           )}
-          <div className="mb-2 flex items-center">
+          <div className="mb-2 flex items-center relative">
             <input
               type="checkbox"
               name="terms"
@@ -238,13 +240,13 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 focus:ring-white transition duration-300"
+            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 focus:ring-white transition duration-300 relative"
           >
             Signup
           </button>
-          <p className="mt-1 text-center text-white text-1xl">
+          <p className="mt-1 text-center text-white text-1xl relative">
             Already have an account?{" "}
-            <Link to="/login" className="text-white text-xl underline font-semibold">
+            <Link to="/login" className="text-white text-xl underline font-semibold relative">
               Login
             </Link>
           </p>

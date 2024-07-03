@@ -4,6 +4,7 @@ import { FaTrash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from './Loader'; // Import the Loader component
+import '../style.css'
 
 function FetchAllQuestions() {
   const [questions, setQuestions] = useState([]);
@@ -74,24 +75,25 @@ function FetchAllQuestions() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {displayedQuestions.map((question) => (
-          <div key={question._id} className="p-4 border rounded shadow" style={{
+          <div key={question._id} className="p-4 border rounded shadow blur-bg-image" style={{
             backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
             backgroundSize: "cover",
             // backgroundPosition: "center"
+            position: "relative"
           }}>
-            <h1 className="text-xl font-semibold mb-2 text-white hover:bg-black rounded-e-full">{question.question}</h1>
-            <ul className="space-y-2 text-white hover:bg-black rounded-e-full text-xl">
+            <h1 className="text-xl font-semibold mb-2 text-white rounded-e-full relative">{question.question}</h1>
+            <ul className="space-y-2 text-white rounded-e-full text-xl relative">
               {question.options.map((option, index) => (
                 <li key={index}>{index} : {option}</li>
               ))}
             </ul>
-            <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-              <p className="mt-2 text-xl">Correct Answer (Index Wise): {question.correct}</p>
+            <div className="flex items-center justify-between text-white rounded-e-full">
+              <p className="mt-2 text-xl relative">Correct Answer (Index Wise): {question.correct}</p>
             </div>
-            <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-              <p className="mt-2 text-xl">Category: {question.category}</p>
+            <div className="flex items-center justify-between text-white rounded-e-full">
+              <p className="mt-2 text-xl relative">Category: {question.category}</p>
               <FaTrash
-                className="ml-4 text-red-700 text-3xl cursor-pointer"
+                className="ml-4 text-red-700 text-3xl cursor-pointer relative"
                 onClick={() => handleDeleteQuestion(question._id)}
                 title="Delete this question...!"
               />

@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import '../style.css'
+
 
 const Login = ({ setUserRole }) => {
   const navigate = useNavigate();
@@ -97,16 +99,17 @@ const Login = ({ setUserRole }) => {
       }}
     >
       <ToastContainer />
-      <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg" style={{
+      <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg blur-bg-image" style={{
         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
-        backgroundSize:"cover",
+        backgroundSize: "cover",
         // backgroundPosition: "center"
+        position: "relative"
       }}>
-        <h1 className="text-3xl font-bold text-center mb-6 text-white">
+        <h1 className="text-3xl font-bold text-center mb-6 text-white relative">
           Login
         </h1>
         <form onSubmit={handleLogin}>
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <input
               type="email"
               name="email"
@@ -144,15 +147,15 @@ const Login = ({ setUserRole }) => {
           )}
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 focus:ring-white transition duration-300"
+            className="w-full bg-indigo-500 text-white text-2xl py-2 rounded-lg cursor-pointer focus:ring-4 focus:ring-white transition duration-300 relative"
           >
             Login
           </button>
-          <p className="mt-1 text-1xl text-center text-white">
+          <p className="mt-1 text-1xl text-center text-white relative">
             Create an account{" "}
             <Link
               to="/signup"
-              className="text-white text-xl underline font-semibold"
+              className="text-white text-xl underline font-semibold relative"
             >
               Signup
             </Link>

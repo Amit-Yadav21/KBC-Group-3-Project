@@ -4,6 +4,7 @@ import { FaTrash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from './Loader'; // Import the Loader component
+import '../style.css'
 
 function FindSignupData() {
     const [findSignupData, setFindSignupData] = useState([]);
@@ -50,37 +51,38 @@ function FindSignupData() {
             <h1 className="text-3xl font-bold text-center">All Signup User & Admin Data</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                 {findSignupData.map((userData) => (
-                    <div key={userData._id} className="p-4 border rounded shadow" style={{
+                    <div key={userData._id} className="p-4 border rounded shadow blur-bg-image" style={{
                         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
                         backgroundSize: "cover",
                         // backgroundPosition: "center"
+                        position: "relative"
                     }}>
-                        <h2 className="text-lg font-semibold text-white hover:bg-black rounded-e-full">Name : {userData.name}</h2>
+                        <h2 className="text-lg font-semibold text-white rounded-e-full relative">Name : {userData.name}</h2>
                         <div className="flex items-center justify-between">
-                            <p className="mt-2 text-white hover:bg-black rounded-e-full text-xl"> Email : {userData.email}</p>
+                            <p className="mt-2 text-white rounded-e-full text-xl relative"> Email : {userData.email}</p>
                         </div>
-                        <div className="max-w-full text-white hover:bg-black rounded-e-full">
+                        <div className="max-w-full text-white rounded-e-full">
                             <div className="flex items-center justify-between">
-                                <p className="mt-2 overflow-hidden overflow-ellipsis whitespace-nowrap text-xl">
-                                    Password: {userData.password}
+                                <p className="mt-2 overflow-hidden overflow-ellipsis whitespace-nowrap text-xl relative">
+                                    Password : {userData.password}
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-                            <p className="mt-2 text-xl"> Mobile Number : {userData.mobile_number}</p>
+                        <div className="flex items-center justify-between text-white rounded-e-full">
+                            <p className="mt-2 text-xl relative"> Mobile Number : {userData.mobile_number}</p>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-                            <p className="mt-2 overflow-hidden overflow-ellipsis whitespace-nowrap text-xl">
+                        <div className="flex items-center justify-between text-white rounded-e-full">
+                            <p className="mt-2 overflow-hidden overflow-ellipsis whitespace-nowrap text-xl relative">
                                 Admin Token : {userData.adminToken}
                             </p>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-                            <p className="mt-2 text-xl"> Role : {userData.role}</p>
+                        <div className="flex items-center justify-between text-white rounded-e-full">
+                            <p className="mt-2 text-xl relative"> Role : {userData.role}</p>
                         </div>
-                        <div className="flex items-center justify-between text-white hover:bg-black rounded-e-full">
-                            <p className="mt-2 text-sm">createdAt : {userData.createdAt}</p>
+                        <div className="flex items-center justify-between text-white rounded-e-full">
+                            <p className="mt-2 text-sm relative">createdAt : {userData.createdAt}</p>
                             <FaTrash
-                                className="ml-4 text-red-500 text-3xl cursor-pointer"
+                                className="ml-4 text-red-500 text-3xl cursor-pointer relative"
                                 onClick={() => handleDeleteUser(userData._id)}
                                 title="Delete this account...!"
                             />
