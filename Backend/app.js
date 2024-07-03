@@ -38,5 +38,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(5555, () => {
-    console.log("server is working on 3000");
+    console.log("server is working on 5555");
 });

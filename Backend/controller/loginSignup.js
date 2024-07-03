@@ -20,16 +20,27 @@ const signup = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        const hashedadminToken = await bcrypt.hash(adminToken, salt);
+        let newUser;
 
-        const newUser = new Register({
-            name,
-            email,
-            password: hashedPassword,
-            mobile_number,
-            role,
-            adminToken: hashedadminToken,
-        });
+        if (role === 'admin') {
+            const hashedAdminToken = await bcrypt.hash(adminToken, salt);
+            newUser = new Register({
+                name,
+                email,
+                password: hashedPassword,
+                mobile_number,
+                role,
+                adminToken: hashedAdminToken,
+            });
+        } else {
+            newUser = new Register({
+                name,
+                email,
+                password: hashedPassword,
+                mobile_number,
+                role,
+            });
+        }
 
         const result = await newUser.save();
         res.status(201).json({ message: "Signup successful", result });
