@@ -41,7 +41,7 @@ const Login = ({ setUserRole }) => {
       errors.password = "Password is required";
     }
     setErrors(errors);
-    setErrorMessage(Object.values(errors).join(". "));
+    // setErrorMessage(Object.values(errors).join(". "));
     return Object.keys(errors).length === 0;
   };
 
@@ -119,7 +119,7 @@ const Login = ({ setUserRole }) => {
               className="w-full px-4 py-2 border rounded-lg bg-transparent text-white"
             />
             {errors.email && (
-              <div className="text-white text-xl mt-1">{errors.email}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.email}</div>
             )}
           </div>
           <div className="mb-4 relative">
@@ -138,12 +138,12 @@ const Login = ({ setUserRole }) => {
               {showPassword ? "Hide" : "Show"}
             </span>
             {errors.password && (
-              <div className="text-white text-xl mt-1">{errors.password}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.password}</div>
             )}
 
           </div>
           {errorMessage && (
-            <div className="mb-4 text-white text-xl text-center">{errorMessage}</div>
+            <div className="mb-4 text-red-500 text-xl text-center">{errorMessage}</div>
           )}
           <button
             type="submit"

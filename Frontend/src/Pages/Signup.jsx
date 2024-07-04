@@ -139,7 +139,7 @@ const Signup = () => {
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 bg-transparent text-white"
             />
             {errors.name && (
-              <div className="text-white text-xl mt-1">{errors.name}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.name}</div>
             )}
           </div>
           <div className="mb-2 relative">
@@ -152,7 +152,7 @@ const Signup = () => {
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 bg-transparent text-white"
             />
             {errors.email && (
-              <div className="text-white text-xl mt-1">{errors.email}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.email}</div>
             )}
           </div>
           <div className="mb-2 relative">
@@ -171,7 +171,7 @@ const Signup = () => {
               {showPassword ? "Hide" : "Show"}
             </span>
             {errors.password && (
-              <div className="text-white text-xl mt-1">{errors.password}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.password}</div>
             )}
           </div>
           <div className="mb-2 relative">
@@ -184,7 +184,7 @@ const Signup = () => {
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 bg-transparent text-white"
             />
             {errors.mobile_number && (
-              <div className="text-white text-xl mt-1">
+              <div className="text-red-500 text-xl mt-1">
                 {errors.mobile_number}
               </div>
             )}
@@ -203,7 +203,7 @@ const Signup = () => {
               <option value="admin">Admin</option>
             </select>
             {errors.role && (
-              <div className="text-white text-xl mt-1">{errors.role}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.role}</div>
             )}
           </div>
           {formData.role === 'admin' && (
@@ -218,7 +218,7 @@ const Signup = () => {
                 className="w-full px-4 py-2 border rounded-lg focus:ring-2 bg-transparent text-white"
               />
               {errors.adminToken && (
-                <div className="text-white text-xl mt-1">{errors.adminToken}</div>
+                <div className="text-red-500 text-xl mt-1">{errors.adminToken}</div>
               )}
             </div>
           )}
@@ -235,7 +235,7 @@ const Signup = () => {
               I agree to the terms and conditions
             </label>
             {errors.terms && (
-              <div className="text-white text-xl mt-1">{errors.terms}</div>
+              <div className="text-red-500 text-xl mt-1">{errors.terms}</div>
             )}
           </div>
           <button
