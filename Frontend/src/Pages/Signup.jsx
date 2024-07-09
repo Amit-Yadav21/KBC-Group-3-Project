@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../style.css'
+import Loader from './Loader'; // Import the Loader component
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Signup = () => {
   });
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const validateForm = () => {
     const errors = {};
@@ -68,6 +70,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     if (validateForm()) {
+      setLoading(true); // Set loading to true when starting login process
       try {
         // Check if email already exists
         const emailCheckResponse = await axios.post("https://kbc-backend-code.onrender.com/check/email", {
@@ -105,6 +108,8 @@ const Signup = () => {
       } catch (error) {
         console.error("Signup Error:", error);
         toast.error("Signup failed. Internal Server Error...");
+      }finally {
+        setLoading(false); // Set loading to false after login attempt completes
       }
     }
   };
@@ -112,6 +117,10 @@ const Signup = () => {
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="flex justify-center items-center p-6 min-h-screen" style={{

@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import '../style.css'
+import Loader from './Loader'; // Import the Loader component
 
 
 const Login = ({ setUserRole }) => {
@@ -15,18 +16,17 @@ const Login = ({ setUserRole }) => {
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // Add loading state
 
   useEffect(() => {
-    // Check if user is already authenticated
     const token = localStorage.getItem("token");
     if (token) {
       const userData = JSON.parse(localStorage.getItem("userData"));
       setUserRole(userData.role);
-      if (userData.role === "admin") {
-        navigate("/AdminDashboard");
-      } else {
-        navigate("/UserDashboard");
-      }
+      navigate(userData.role === "admin" ? "/AdminDashboard" : "/UserDashboard");
+      setLoading(false); // Set loading to false after authentication check
+    } else {
+      setLoading(false); // Set loading to false if no token found
     }
   }, [navigate, setUserRole]);
 
@@ -53,6 +53,7 @@ const Login = ({ setUserRole }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (validateForm()) {
+      setLoading(true); // Set loading to true when starting login process
       try {
         const response = await axios.post("https://kbc-backend-code.onrender.com/login", {
           email: formData.email,
@@ -64,12 +65,7 @@ const Login = ({ setUserRole }) => {
           localStorage.setItem("token", data.token);
           localStorage.setItem("userData", JSON.stringify(data.user));
           setUserRole(data.user.role);
-
-          if (data.user.role === "admin") {
-            navigate("/AdminDashboard");
-          } else {
-            navigate("/UserDashboard");
-          }
+          navigate(data.user.role === "admin" ? "/AdminDashboard" : "/UserDashboard");
         } else {
           console.error("Login failed");
           setErrorMessage("Login failed. Please try again.");
@@ -81,7 +77,9 @@ const Login = ({ setUserRole }) => {
         });
       } catch (error) {
         console.error("Login error:", error);
-        toast.error("Check Email and Passqord...?");
+        toast.error("Error logging in. Please check your credentials.");
+      } finally {
+        setLoading(false); // Set loading to false after login attempt completes
       }
     }
   };
@@ -89,6 +87,10 @@ const Login = ({ setUserRole }) => {
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="flex justify-center items-center p-6 min-h-screen"
