@@ -38,7 +38,7 @@ function App() {
           <>
             <Route path="/Signup" element={<Signup />} />
             <Route path="/Login" element={<Login setUserRole={setUserRole} />} />
-            <Route path="/" element={<Navigate to="/Signup" />} />
+            <Route path="/" element={<Navigate to="/Login" />} />
           </>
         ) : (
           <>
