@@ -95,9 +95,10 @@ const Login = ({ setUserRole }) => {
   return (
     <div className="flex justify-center items-center p-6 min-h-screen"
       style={{
-        backgroundImage: "url('https://wallpaperset.com/w/full/5/5/9/521100.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
+        backgroundColor:"#F0F8FF"
+        // backgroundImage: "url('https://wallpaperset.com/w/full/5/5/9/521100.jpg')",
+        // backgroundSize: "cover",
+        // backgroundPosition: "center"
       }}
     >
       <ToastContainer />

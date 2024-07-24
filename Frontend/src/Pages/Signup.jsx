@@ -124,9 +124,7 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center p-6 min-h-screen" style={{
-      backgroundImage: "url('https://wallpaperset.com/w/full/5/5/9/521100.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center"
+      backgroundColor:"#F0F8FF"
     }}>
       <div className="container max-w-md mx-auto p-8 shadow-lg rounded-lg blur-bg-image" style={{
         backgroundImage: "url('https://navbharattimes.indiatimes.com/thumb/69355236/kbc-69355236.jpg?imgsize=428966&width=1200&height=900&resizemode=75')",
