@@ -12,7 +12,7 @@ function Lifelines() {
   useEffect(() => {
     const fetchLifelines = async () => {
       try {
-        const response = await axios.get('https://kbc-backend-code.onrender.com/GetAll/Lifelines');
+        const response = await axios.get('https://kbc-backend-code.vercel.app/GetAll/Lifelines');
         setLifelines(response.data.lifelines); // Assuming the data structure is { lifelines: [...] }
       } catch (error) {
         console.error('Failed to fetch lifelines:', error);

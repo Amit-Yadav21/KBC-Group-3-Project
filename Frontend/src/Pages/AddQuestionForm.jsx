@@ -33,7 +33,7 @@ const AddQuestionForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://kbc-backend-code.onrender.com/Create/Questions", {
+      const response = await axios.post("https://kbc-backend-code.vercel.app/Create/Questions", {
         question: formData.question,
         options: formData.options,
         correct: formData.correct,

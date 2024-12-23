@@ -13,7 +13,7 @@ const GameStart = () => {
 
   const fetchQuestionsFromDB = async () => {
     try {
-      const response = await axios.get('https://kbc-backend-code.onrender.com/Get/Random/Questions');
+      const response = await axios.get('https://kbc-backend-code.vercel.app/Get/Random/Questions');
       setQuestions(response.data.selectedQuestions);
       setStart(true); // Once questions are fetched, set start to true to render Quiz component
     } catch (error) {

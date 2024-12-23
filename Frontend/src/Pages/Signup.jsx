@@ -73,7 +73,7 @@ const Signup = () => {
       setLoading(true); // Set loading to true when starting login process
       try {
         // Check if email already exists
-        const emailCheckResponse = await axios.post("https://kbc-backend-code.onrender.com/check/email", {
+        const emailCheckResponse = await axios.post("https://kbc-backend-code.vercel.app/check/email", {
           email: formData.email,
         });
 
@@ -83,7 +83,7 @@ const Signup = () => {
         }
 
         // Proceed with signup if email does not exist
-        const response = await axios.post("https://kbc-backend-code.onrender.com/post", {
+        const response = await axios.post("https://kbc-backend-code.vercel.app/post", {
           name: formData.name,
           email: formData.email,
           password: formData.password,
